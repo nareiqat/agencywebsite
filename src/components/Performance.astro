@@ -1,59 +1,55 @@
+---
+import { Image } from "astro:assets";
+import image from "../assets/images/100-score.png";
+---
+
 <!-- ============================================ --><!--                Side By Side                  --><!-- ============================================ -->
 <section id="sbs-1640">
   <div class="cs-container">
     <div class="cs-content">
-      <span class="cs-topper">Our Courses</span>
-      <h2 class="cs-title">Stitch Group for Process Safety Training</h2>
-      <picture class="cs-picture">
+      <span class="cs-topper">Website Performance</span>
+      <h2 class="cs-title">
+        Better Performance <span class="cs-color">More</span> Leads!
+      </h2>
+      <div class="cs-picture">
         <!--Mobile Image-->
-        <source
-          media="(max-width: 600px)"
-          srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg"
-        />
-        <!--Tablet and above Image-->
-        <source
-          media="(min-width: 601px)"
-          srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg"
-        />
-        <img
+
+        <Image
           loading="lazy"
           decoding="async"
-          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg"
-          alt="people"
-          width="608"
+          src={image}
+          alt="lighthouse"
+          width="1208"
           height="406"
+          quality={100}
         />
-      </picture>
+      </div>
     </div>
     <div class="cs-stats-group">
       <p class="cs-text">
-        Aqestic recusandae laudantium optio amet a quisquam saepe aliquid,
-        voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum
-        cupiditate totam reiciendis quam minus inventore sint rem impedit esse
-        quasi Tenetur sed reprehenderit earum a magni aliquid blanditiis
-        dolores, veritatis soluta autem beatae officia expedita ipsum rerum
-        doloribus sit provident delectus perspiciatis voluptatem eum cupiditate.
+        At NCAT Digital, our commitment to performance excellence sets us apart.
+        We focus on delivering fast, secure, and scalable solutions that empower
+        your business to achieve its goals seamlessly. Every website we create
+        is optimized for speed, reliability, and user satisfaction.
       </p>
       <p class="cs-text">
-        Aqestic recusandae laudantium optio amet a quisquam saepe aliquid,
-        voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum
-        cupiditate totam reiciendis quam minus inventore sint rem impedit esse
-        quasi Tenetur sed reprehenderit earum a magni aliquid blanditiis
-        dolores, veritatis soluta autem beatae officia expedita ipsum rerum
-        doloribus sit provident delectus perspiciatis voluptatem eum cupiditate.
+        With a data-driven approach, we ensure that your digital presence not
+        only meets industry standards but exceeds them. From responsive designs
+        to advanced analytics integration, we craft solutions that perform under
+        pressure and adapt to evolving needs.
       </p>
       <ul class="cs-stats">
         <li class="cs-stat">
-          <span class="cs-number">475</span>
-          <span class="cs-desc">Repeat Customers</span>
+          <span class="cs-number">100%</span>
+          <span class="cs-desc">Statisfaction</span>
         </li>
         <li class="cs-stat">
-          <span class="cs-number">2K</span>
-          <span class="cs-desc">Satisfied Customers</span>
+          <span class="cs-number">10+</span>
+          <span class="cs-desc">Projects</span>
         </li>
         <li class="cs-stat">
-          <span class="cs-number">37</span>
-          <span class="cs-desc">Professional Team</span>
+          <span class="cs-number">100</span>
+          <span class="cs-desc">Page speed</span>
         </li>
       </ul>
     </div>
@@ -69,8 +65,14 @@
   @media only screen and (min-width: 0rem) {
     #sbs-1640 {
       padding: var(--sectionPadding);
-      background-color: #111926;
+      background-color: var(--primary);
       overflow: hidden;
+      .cs-topper {
+        color: var(--secondary);
+      }
+      .cs-color {
+        color: #43b7ff;
+      }
 
       .cs-container {
         width: 100%;
@@ -177,7 +179,7 @@
         text-align: left;
         /* auto margin top will push text to bottom if there's only one line */
         margin: 0;
-        color: var(--primary);
+        color: var(--secondary);
       }
     }
   }
@@ -227,10 +229,11 @@
   @media only screen and (min-width: 0rem) {
     body.dark-mode {
       #sbs-1640 {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: var(--dark);
+
         .cs-stats-group {
           &:before {
-            background-color: var(--dark);
+            background-color: var(--accent);
           }
         }
       }

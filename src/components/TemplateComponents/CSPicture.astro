@@ -38,7 +38,7 @@ const fallbackImg = await getImage({
 });
 ---
 
-<!-- Adjust the width and height attributes sizes based on the stitch you're using -->
+
 <picture>
     <source media=`(max-width: ${mobileMediaWidth})` srcset={mobileImg.src} />
     <source media=`(min-width: ${desktopMediaWidth})` srcset={desktopImg.src} />
@@ -53,7 +53,7 @@ const fallbackImg = await getImage({
     />
 </picture>
 
-<!-- Adjust the styles based on the stitch you're using -->
+
 <style lang="less">
     picture {
         width: 100%;

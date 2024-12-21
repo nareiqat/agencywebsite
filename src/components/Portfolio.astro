@@ -1,148 +1,162 @@
 ---
+import { Image } from "astro:assets";
 
+import constructionwebsite from "../assets/images/constructionwebsite.png";
+import landscapewebsite from "../assets/images/landscapewebsite.png";
+import paintingwebsite from "../assets/images/paintingwebsite.png";
+import grinderwebsite from "../assets/images/grinderwebsite.png";
+import handymanwebsite from "../assets/images/themasterhandymanwebsite.png";
 ---
 
 <section id="portfolio">
   <div class="cs-container">
     <div class="cs-content">
       <div class="cs-flex">
-        <span class="cs-topper">Our services</span>
-        <h2 class="cs-title">Grow Your Business with Our New Bold Agency</h2>
+        <span class="cs-topper">Our Portfolio</span>
+        <h2 class="cs-title">Example Works</h2>
       </div>
       <p class="cs-text">
-        Aqestic recusandae laudantium optio amet a quisquam saepe aliquid,
-        voluptate praesentium dicta fuga dolor error perspiciatis voluptatem eum
-        cupiditate totam reiciendis quam minus inventore sint rem impedit esse
-        quasi Tenetur sed reprehenderit earum a magni aliquid blanditiis
-        dolores, veritatis soluta autem beatae officia expedita ipsum rerum
-        doloribus sit provident delectus.
+        Explore a diverse array of projects that showcase our ability to
+        transform ideas into impactful digital solutions. From sleek and modern
+        website designs to feature-rich platforms, every project reflects our
+        commitment to quality and innovation. With each portfolio piece, we
+        demonstrate a seamless blend of creativity, functionality, and
+        performance excellence tailored to meet unique client needs.
       </p>
     </div>
     <ul class="cs-card-group">
       <li class="cs-item">
         <a href="" class="cs-link">
-          <picture class="cs-picture">
+          <div class="cs-picture">
             <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/nuclear.jpg"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/nuclear.jpg"
-            />
-            <img
+
+            <Image
               loading="lazy"
               decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/nuclear.jpg"
+              src={landscapewebsite}
               alt="room"
               width="413"
               height="420"
             />
-          </picture>
-          <h3 class="cs-h3">Process Safety & Risk Management</h3>
+          </div>
+          <h3 class="cs-h3">Hero Landscape</h3>
           <p class="cs-item-text">
-            We provide some of the finest quality, most reliable, and cost
-            effective services and solutions.
+            An immersive website designed to showcase Hero Landscape's
+            transformative outdoor projects, combining vibrant visuals with
+            user-friendly features to inspire clients
           </p>
-          <span class="cs-fake-link">
-            Get Started
-            <img
-              class="cs-icon"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg"
-              alt=""
-              width="20"
-              height="20"
-              loading="lazy"
-              decoding="async"
-              aria-hidden="true"
-            />
-          </span>
+
+          <a
+            href="https://herolandscapeing.netlify.app/"
+            class="cs-button-solid">To website</a
+          >
         </a>
       </li>
       <li class="cs-item">
         <a href="" class="cs-link">
-          <picture class="cs-picture">
+          <div class="cs-picture">
             <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/worker5.jpg"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/worker5.jpg"
-            />
-            <img
+
+            <Image
               loading="lazy"
               decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/worker5.jpg"
+              src={constructionwebsite}
               alt="room"
               width="413"
               height="420"
             />
-          </picture>
-          <h3 class="cs-h3">Occupational Safety & Health</h3>
+          </div>
+          <h3 class="cs-h3">Kirck Construction</h3>
           <p class="cs-item-text">
-            We provide some of the finest quality, most reliable, and cost
-            effective services and solutions.
+            A modern, responsive website highlighting Kirck Construction's
+            expertise in renovations and builds, featuring detailed project
+            galleries and client testimonials.
           </p>
-          <span class="cs-fake-link">
-            Get Started
-            <img
-              class="cs-icon"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg"
-              alt=""
-              width="20"
-              height="20"
-              loading="lazy"
-              decoding="async"
-              aria-hidden="true"
-            />
-          </span>
+
+          <a
+            href="https://kirckconstruction.netlify.app/"
+            class="cs-button-solid">To website</a
+          >
         </a>
       </li>
       <li class="cs-item">
         <a href="" class="cs-link">
-          <picture class="cs-picture">
+          <div class="cs-picture">
             <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/containers.jpg"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/containers.jpg"
-            />
-            <img
+
+            <Image
               loading="lazy"
               decoding="async"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/containers.jpg"
+              src={paintingwebsite}
               alt="room"
               width="413"
               height="420"
             />
-          </picture>
-          <h3 class="cs-h3">Security Assessment and Planning</h3>
+          </div>
+          <h3 class="cs-h3">ABC painters</h3>
           <p class="cs-item-text">
-            We provide some of the finest quality, most reliable, and cost
-            effective services and solutions.
+            A vibrant online portfolio for ABC Painters, showcasing bold color
+            schemes, completed projects, and a seamless contact form for
+            inquiries.
           </p>
-          <span class="cs-fake-link">
-            Get Started
-            <img
-              class="cs-icon"
-              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg"
-              alt=""
-              width="20"
-              height="20"
+
+          <a
+            href="https://yourdreampainterwebsite.netlify.app/"
+            class="cs-button-solid">To website</a
+          >
+        </a>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <div class="cs-picture">
+            <!--Mobile Image-->
+
+            <Image
               loading="lazy"
               decoding="async"
-              aria-hidden="true"
+              src={handymanwebsite}
+              alt="room"
+              width="413"
+              height="420"
             />
-          </span>
+          </div>
+          <h3 class="cs-h3">The Master Handyman</h3>
+          <p class="cs-item-text">
+            An efficient and professional website for The Master Handyman,
+            providing easy navigation through services, booking options, and
+            project showcases.
+          </p>
+
+          <a href="https://www.handymanmastery.com/" class="cs-button-solid"
+            >To website</a
+          >
+        </a>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <div class="cs-picture">
+            <!--Mobile Image-->
+
+            <Image
+              loading="lazy"
+              decoding="async"
+              src={grinderwebsite}
+              alt="room"
+              width="413"
+              height="420"
+            />
+          </div>
+          <h3 class="cs-h3">Liberty's Mediteranean Grinders</h3>
+          <p class="cs-item-text">
+            A sleek and elegant website for Liberty's, featuring stunning food
+            photography, a menu display, and streamlined online reservation
+            functionality.
+          </p>
+
+          <a
+            href="https://libertysmediterraneangrinders.com/"
+            class="cs-button-solid">To website</a
+          >
         </a>
       </li>
     </ul>
@@ -172,6 +186,43 @@
         gap: clamp(3rem, 6vw, 4rem);
       }
 
+      .cs-button-solid {
+        font-size: (16/16rem);
+        text-decoration: none;
+        font-weight: 700;
+        overflow: hidden;
+        margin: 0;
+        color: var(--primary);
+        padding: 0 (48/16rem);
+        border-radius: (30/25rem);
+        background-color: var(--secondary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 0%;
+          background: var(--secondaryLight);
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: width 0.3s;
+        }
+
+        &:hover {
+          color: var(--secondary);
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+
       .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: left;
@@ -190,6 +241,7 @@
         max-width: (640/16rem);
         position: relative;
         z-index: 1;
+        color: var(--primary);
 
         &:after {
           /* divider line */
@@ -197,7 +249,7 @@
           width: 100%;
           height: 1px;
           margin-top: (24/16rem);
-          background: var(--primary);
+          background: var(--bodyTextColor);
           opacity: 1;
           display: block;
           position: relative;
@@ -264,7 +316,7 @@
           left: 0;
           height: 100%;
           width: 100%;
-          object-fit: cover;
+          object-fit: fit;
           transition:
             transform 0.6s,
             opacity 0.3s;
@@ -277,34 +329,16 @@
         font-weight: 700;
         text-align: left;
         margin: 0 0 (12/16rem) 0;
-        color: var(--headerColor);
+        color: var(--primary);
       }
 
       .cs-item-text {
+        font-family: "poppins", sans-serif;
         font-size: (16/16rem);
         line-height: 1.5em;
         text-align: left;
         margin: 0 0 (24/16rem) 0;
         color: var(--bodyTextColor);
-      }
-
-      .cs-fake-link {
-        font-size: (16/16rem);
-        line-height: 1.2em;
-        font-weight: 700;
-        margin: 0;
-        margin-top: auto;
-        color: var(--primary);
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: (8/16rem);
-
-        &:hover {
-          .cs-icon {
-            transform: translateX(0.5rem);
-          }
-        }
       }
 
       .cs-icon {
@@ -369,7 +403,7 @@
   @media only screen and (min-width: 0rem) {
     body.dark-mode {
       #portfolio {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: var(--dark);
 
         .cs-title,
         .cs-text,
@@ -378,9 +412,10 @@
           color: var(--bodyTextColorWhite);
         }
 
-        .cs-text,
-        .cs-item-text {
-          opacity: 0.8;
+        .cs-text {
+          &:after {
+            background: var(--bodyTextColorWhite);
+          }
         }
       }
     }

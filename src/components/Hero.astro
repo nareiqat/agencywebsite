@@ -14,7 +14,7 @@ import cat from "../assets/svgs/cat.svg";
         No page builders or WordPress - We offer superior 100% hand-coded
         websites with starting at $150/mo.
       </p>
-      <a href="" class="cs-button-solid">Free Consultation</a>
+      <a href="/contact" class="cs-button-solid">Free Consultation</a>
     </div>
     <div class="cs-picture">
       <Image
@@ -176,15 +176,14 @@ import cat from "../assets/svgs/cat.svg";
 
       .cs-button-solid {
         font-size: (16/16rem);
-        line-height: (56/16rem);
         text-decoration: none;
         font-weight: 700;
         overflow: hidden;
         margin: 0;
-        color: #fff;
+        color: var(--bodyTextColorWhite);
         padding: 0 (48/16rem);
         border-radius: (30/16rem);
-        background-color: var(--primary);
+        background-color: var(--secondary);
         display: inline-block;
         position: relative;
         z-index: 1;
@@ -196,7 +195,7 @@ import cat from "../assets/svgs/cat.svg";
           display: block;
           height: 100%;
           width: 0%;
-          background: #fff;
+          background: var(--bodyTextColorWhite);
           opacity: 1;
           top: 0;
           left: 0;
@@ -205,7 +204,7 @@ import cat from "../assets/svgs/cat.svg";
         }
 
         &:hover {
-          color: var(--primary);
+          color: var(--primaryLight);
           &:before {
             width: 100%;
           }
@@ -377,6 +376,10 @@ import cat from "../assets/svgs/cat.svg";
         position: absolute;
         bottom: (-400/16rem);
         right: (-160/16rem);
+      }
+
+      .cs-topper {
+        color: var(--secondary);
       }
 
       .cs-bubbles {

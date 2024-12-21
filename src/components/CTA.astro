@@ -11,9 +11,9 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
   <div class="cs-container">
     <div class="cs-content">
       <h2 class="cs-title">
-        Have Doubts? Get Your Queries Solved by Our Experts
+        Have Any Questions? Get In Touch
       </h2>
-      <a href="" class="cs-button-solid">Get In Touch</a>
+      <a href="/contact" class="cs-button-solid">Get In Touch</a>
     </div>
   </div>
 </section>
@@ -27,7 +27,8 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
   @media only screen and (min-width: 0rem) {
     #cta-1693 {
       padding: var(--sectionPadding);
-      background-color: var(--primary);
+      background-color: rgba(0, 0, 0, 0.34);
+
       position: relative;
       overflow: hidden;
 
@@ -56,14 +57,12 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
       .cs-title {
         max-width: 30ch;
         margin: 0;
-        color: #fff;
+        color: var(--bodyTextColor);
       }
 
       .cs-button-solid {
         font-size: (16/16rem);
         font-weight: 700;
-        /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
         text-align: center;
         text-decoration: none;
         min-width: (150/16rem);
@@ -71,7 +70,7 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
         /* prevents padding from adding to the width */
         box-sizing: border-box;
         padding: 0 (24/16rem);
-        color: #fff;
+        color: var(--bodyTextColorWhite);
         background-color: var(--secondary);
         display: inline-block;
         position: relative;
@@ -81,7 +80,7 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
           content: "";
           width: 0%;
           height: 100%;
-          background: #000;
+          background: var(--bodyTextColor);
           opacity: 1;
           position: absolute;
           top: 0;
@@ -106,6 +105,25 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
         text-align: left;
         flex-direction: row;
         justify-content: space-between;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode {
+      #cta-1693 {
+        background-color: rgba(0, 0, 20, 0.7);
+        .cs-content {
+          .cs-title {
+            color: var(--bodyTextColorWhite);
+          }
+        }
+        .cs-button-solid {
+          background-color: var(--secondary);
+          &:before {
+            background: var(--secondaryLight);
+          }
+        }
       }
     }
   }

@@ -10,13 +10,13 @@ import Portfolio from "@components/Portfolio.astro";
 import Pricing from "@components/Pricing.astro";
 import Services from "@components/Services.astro";
 import Testimonials from "@components/Testimonials.astro";
-import WhyUs from "@components/WhyUs.astro";
+import WhyUs from "@components/Performance.astro";
 import { getOptimizedImage } from "@js/utils";
 const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="Pixel Perfect Websites"
+  title="Local Business Website Development Agency"
   description="Meta description for the page"
   preloadedImage={optimizedImage}
 >
@@ -24,8 +24,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
   <Services />
   <WhyUs />
   <Portfolio />
-  <Testimonials />
-  <Blogsection />
   <Pricing />
   <CTA />
 </BaseLayout>

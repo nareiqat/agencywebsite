@@ -1,18 +1,18 @@
-/* CODESTITCH STYLES, RESET, HEADER/NAVIGATION AND FOOTER */
+
 
 /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
 
-/* CodeStitch Root and Helpers */
+
 @media only screen and (min-width: 0em) {
   // Website colors
   :root {
     --primary: #0b0c10;
-    --primaryLight: #1f2833;
-    --secondary: #c5c6c7;
-    --secondaryLight: #66cfc1;
-    --headerColor: #45a29e;
+    --primaryLight: #2c2d30;
+    --secondary: #1b86d2;
+    --secondaryLight: #9ed3f4;
+    --grey: #f7f7f7;
     --bodyTextColor: #111;
     --bodyTextColorWhite: #fff;
 
@@ -20,20 +20,20 @@
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
     --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
+    --bodyFontSize: 1.125rem;
 
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
 
-  // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
+
   .cs-topper {
     font-size: var(--topperFontSize);
     font-weight: 700;
     line-height: 1.2em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--secondaryLight);
+    color: var(--secondary);
     display: block;
   }
 
@@ -42,11 +42,12 @@
     font-weight: 900;
     line-height: 1.2em;
     margin: 0 auto (16/16rem);
-    color: var(--secondaryLight);
+    color: var(--primary);
     position: relative;
   }
 
   .cs-text {
+    font-family: "poppins", sans-serif;
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
     width: 100%;
@@ -54,7 +55,7 @@
     color: var(--secondaryLight);
   }
 
-  // Button - can be replaced using CodeStitch's "Button" Stitches
+
   .cs-button-solid {
     font-size: (16/16rem);
     font-weight: bold;
@@ -222,7 +223,7 @@
   h5,
   h6 {
     margin: 0;
-    color: var(--headerColor);
+    color: var(--grey);
   }
 
   p,

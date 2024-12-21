@@ -1,5 +1,5 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
 <!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
@@ -17,7 +17,7 @@
     <ul class="cs-card-group">
       <li class="cs-item">
         <picture class="cs-icon-wrapper">
-          <img
+          <Image
             class="cs-icon"
             loading="lazy"
             decoding="async"
@@ -251,7 +251,7 @@
         font-weight: bold;
         text-align: inherit;
         margin: 0 0 (12/16rem) 0;
-        color: var(--headerColor);
+        color: var(--grey);
       }
 
       .cs-item-text {
@@ -371,7 +371,7 @@
   @media only screen and (min-width: 0rem) {
     body.dark-mode {
       #services-966 {
-        background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/chevron-pattern-light2.svg");
+        background: url(../assets/svgs/circuit.svg);
         background-size: auto;
         background-position: center;
         background-repeat: repeat;

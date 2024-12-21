@@ -8,9 +8,9 @@
 @media only screen and (min-width: 0em) {
     // Dark Mode Color Scheme
     :root {
-        --dark: hsl(163, 96%, 5%);
-        --medium: hsl(163, 95%, 8%);
-        --accent: #334756;
+        --dark: rgba(0, 0, 0, 0.8);
+        --medium: rgba(0, 0, 0, 0.6);
+        --accent: rgba(0, 0, 0, 0.4);
     }
 
     body.dark-mode {
@@ -35,6 +35,14 @@
         // show all dark classes
         .dark {
             display: block !important;
+        }
+
+        .cs-topper {
+            color: var(--secondaryLight) !important;
+        }
+
+        .cs-desc {
+            color: var(--secondaryLight) !important;
         }
     }
 

@@ -1,7 +1,7 @@
 ---
 title: Beautiful bathrooms
 description: Lorem markdownum Talia. Carinae equis.
-author: Code Stitch
+author: dasdad
 date: 2023-06-08T15:27:34.591Z
 image: src/assets/images/blog/4p2a1864-copy.jpg
 imageAlt: Bathroom

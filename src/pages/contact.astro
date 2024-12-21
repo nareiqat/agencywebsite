@@ -2,26 +2,25 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import client from "@data/client.json";
 import Landing from "@components/Landing.astro";
+import contactpic from "../assets/images/laptopwithquote.jpg";
+import { Image } from "astro:assets";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "@js/utils"
-import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import { getOptimizedImage } from "@js/utils";
+import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
   title="Contact"
   description="Meta description for the page"
-  preloadedImage = {optimizedImage}
+  preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Contact"
-    image={optimizedImage}
-  />
+  <Landing title="Contact" image={optimizedImage} />
 
   <!-- ============================================ -->
   <!--                Contact Form                  -->
@@ -47,6 +46,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             id="name"
             name="name"
             placeholder="Name"
+            required
           />
         </label>
         <label>
@@ -57,16 +57,17 @@ const optimizedImage = await getOptimizedImage(landingImage)
             id="email"
             name="email"
             placeholder="Email"
+            required
           />
         </label>
         <label>
           Phone
           <input
             required
-            type="text"
+            pattern="{10}"
             id="phone"
             name="phone"
-            placeholder="Phone"
+            placeholder="413-555-1212"
           />
         </label>
         <label>
@@ -76,6 +77,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             id="find"
             name="find-us"
             placeholder="How did you find us?"
+            required
           />
         </label>
         <label class="cs-label-message">
@@ -84,49 +86,40 @@ const optimizedImage = await getOptimizedImage(landingImage)
             required
             name="Message"
             id="message"
-            placeholder="Write message..."></textarea>
+            placeholder="Write message..."
+            required
+            ></textarea>
         </label>
         <button class="cs-button-solid" type="submit">Submit Message</button>
       </form>
       <div class="cs-right-section">
         <!--Email-->
-        <span class="cs-header">Email</span>
-        <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
-        <!--Phone-->
-        <span class="cs-header">Phone</span>
-        <a class="cs-link" href={`tel:${client.phoneForTel}`}
-          >{client.phoneFormatted}</a
-        >
-        <!--Address-->
-        <span class="cs-header">Address</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
+        <div class="text-section">
+          <span class="cs-header">Email</span>
+          <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
           <br />
-          {client.address.lineTwo},
-          <br />
-          <span class="cs-block">
-            {client.address.city}
-            {client.address.state}
-            {client.address.zip}
-          </span>
-        </a>
+          <!--Address-->
+          <span class="cs-header">Address</span>
+          <div class="cs-link">
+            <span class="cs-block">
+              {client.address.city}
+              {client.address.state}
+              {client.address.zip}
+            </span>
+          </div>
+        </div>
 
         <!-- Background Image-->
-        <picture class="cs-bg-picture">
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
-          />
-          <img
-            aria-hidden="true"
+        <div class="cs-bg-picture">
+          <Image
             decoding="async"
-            src="/assets/images/skyscraper.jpg"
+            src={contactpic}
             alt="building"
             loading="lazy"
             width="2500"
             height="1667"
           />
-        </picture>
+        </div>
       </div>
     </div>
   </section>
@@ -155,6 +148,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     #cs-contact {
       font-family: "Roboto", "Arial", sans-serif;
       padding: var(--sectionPadding);
+      background-color: var(--grey);
 
       .cs-container {
         width: 100%;
@@ -185,6 +179,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         margin: 0 auto 0 0;
         /* 40px - 48px */
         margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
+        color: var(--bodyTextColor);
       }
 
       #cs-form {
@@ -195,7 +190,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
           line-height: 1.5em;
           /* 12px - 20px */
           margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
-          color: var(--headerColor);
+          color: var(--grey);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -232,8 +227,21 @@ const optimizedImage = await getOptimizedImage(landingImage)
         }
 
         .cs-button-solid {
-          width: 100%;
+          text-decoration: none;
           border: none;
+          color: #fff;
+          transition: color 0.3s;
+          &:before {
+            background-color: var(--secondary);
+            transition: width 0.3s;
+          }
+
+          &:hover {
+            color: var(--bodyTextColorWhite);
+            &:before {
+              width: 100%;
+            }
+          }
         }
       }
 
@@ -250,6 +258,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
         position: relative;
         /* cuts off corners on img tag */
         overflow: hidden;
+      }
+
+      .text-section {
+        z-index: 2;
       }
 
       .cs-header {
@@ -310,7 +322,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 1;
         transition: transform 0.6s;
 
         &:before {
