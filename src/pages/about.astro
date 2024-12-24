@@ -74,9 +74,9 @@ const optimizedImage = await getOptimizedImage(landingImage);
         </p>
         <div class="cs-flex-group">
           <p class="cs-flex-p">
-            At NCAT Digital, every project begins with understanding your
-            story, so we can create solutions that truly represent your brand
-            and resonate with your audience.
+            At NCAT Digital, every project begins with understanding your story,
+            so we can create solutions that truly represent your brand and
+            resonate with your audience.
           </p>
           <span class="cs-name">Nabeel Areiqat</span>
           <span class="cs-job">CEO-Founder</span>
@@ -237,15 +237,37 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
       .cs-button-solid {
         margin-top: (32/16rem);
+        font-size: (16/16rem);
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        min-width: (150/16rem);
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        padding: 0 (24/16rem);
         color: var(--bodyTextColorWhite);
+        background-color: var(--secondary);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          content: "";
+          width: 0%;
+          height: 100%;
+          background: var(--secondaryDark);
+          opacity: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: width 0.3s;
+        }
 
         &:hover {
-          background-color: var(--secondary);
-          color: var(--bodyTextColor);
-          transition: 0.5s color;
-        }
-        &:before {
-          background-color: var(--secondary);
+          &:before {
+            width: 100%;
+          }
         }
       }
     }
@@ -293,20 +315,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
           color: var(--primaryLight);
         }
 
-        .cs-button-solid {
-          margin-top: (32/16rem);
-          color: var(--bodyTextColorWhite);
-          background-color: var(--secondary);
-
-          &:hover {
-            background-color: var(--secondaryLight);
-            color: var(--bodyTextColorWhite);
-            transition: 0.5s color;
-          }
-          &:before {
-            background-color: var(--secondaryLight);
-          }
-        }
 
         .cs-title,
         .cs-text,

@@ -45,10 +45,10 @@ import logo from "../assets/svgs/nqatlogo.svg";
                 class:list={[
                   "cs-li",
                   { "cs-dropdown": entry.children?.length > 0 },
+                  { "hide-desktop": entry.key === "Contact" }, // Add conditional class
                 ]}
               >
                 {entry.children?.length > 0 ? (
-                  // If entry has children in navData.json, create a button and a dropdown icon
                   <button
                     aria-expanded="false"
                     aria-controls={`submenu-${entry.key}`}
@@ -62,7 +62,6 @@ import logo from "../assets/svgs/nqatlogo.svg";
                     <Icon name="mdi--caret" class="cs-drop-icon" />
                   </button>
                 ) : (
-                  // If entry does not have children in navData.json, create an anchor
                   <a
                     href={entry.url}
                     class:list={[
@@ -76,28 +75,6 @@ import logo from "../assets/svgs/nqatlogo.svg";
                     {entry.key}
                   </a>
                 )}
-
-                {/* {entry.children?.length > 0 && (
-                  // If entry has children in navData.json, create a drop down menu
-                  <ul id={`submenu-${entry.key}`} class="cs-drop-ul">
-                    {entry.children.map((child) => (
-                      <li class="cs-drop-li">
-                        <a
-                          href={child.url}
-                          class="cs-li-link cs-drop-link"
-                          aria-current={
-                            Astro.url.pathname === child.url
-                              ? "page"
-                              : undefined
-                          }
-                          aria-label={child.key}
-                        >
-                          {child.key}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )} */}
               </li>
             ))
           }
@@ -111,10 +88,6 @@ import logo from "../assets/svgs/nqatlogo.svg";
 </header>
 
 <style lang="less">
-  /*-- -------------------------- -->
-<---     Mobile Navigation      -->
-<--- -------------------------- -*/
-
   /* Mobile - 1023px */
   /*-- -------------------------- -->
 <---      Dark Mode Toggle      -->
@@ -262,6 +235,10 @@ import logo from "../assets/svgs/nqatlogo.svg";
         transition:
           transform 0.2s,
           border-radius 0.3s ease-in-out;
+      }
+
+      .nodisplay {
+        display: none;
       }
 
       &.cs-active {
@@ -694,6 +671,9 @@ import logo from "../assets/svgs/nqatlogo.svg";
   /* Desktop - 1024px */
   @media only screen and (min-width: 64rem) {
     #cs-navigation {
+      .hide-desktop {
+        display: none !important;
+      }
       .cs-dropdown {
         position: relative;
         &:hover {
@@ -1062,7 +1042,7 @@ import logo from "../assets/svgs/nqatlogo.svg";
           content: "";
           width: 0%;
           height: 100%;
-          background: var(--secondaryLight);
+          background: var(--secondaryDark);
           opacity: 1;
           position: absolute;
           top: 0;
@@ -1095,7 +1075,9 @@ import logo from "../assets/svgs/nqatlogo.svg";
     body.dark-mode {
       #cs-navigation {
         background-color: rgba(0, 0, 0, 0.8);
-
+        .hide-desktop {
+          display: none;
+        }
         .cs-li-link,
         .cs-phone {
           color: var(--bodyTextColorWhite);

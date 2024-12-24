@@ -230,9 +230,10 @@ const optimizedImage = await getOptimizedImage(landingImage);
           text-decoration: none;
           border: none;
           color: #fff;
+          background-color: var(--secondary);
           transition: color 0.3s;
           &:before {
-            background-color: var(--secondary);
+            background-color: var(--secondaryDark);
             transition: width 0.3s;
           }
 
@@ -440,6 +441,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
   @media only screen and (min-width: 0em) {
     body.dark-mode {
       #cs-contact {
+        background-color: var(--dark);
         .cs-text,
         .cs-title {
           color: var(--bodyTextColorWhite);
@@ -448,6 +450,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         .cs-topper {
           color: var(--primaryLight);
         }
+
 
         #cs-form {
           label,
