@@ -43,11 +43,11 @@ const currentYear = getCurrentYear();
             <h2>Contact</h2>
           </li>
           <li>
-            <a href="/contact">
+            <div>
               {client.address.city}
               {client.address.state}
               {client.address.zip}
-            </a>
+            </div>
           </li>
           <li>
             <a href={`mailto:${client.email}`}>Click to Email</a>
