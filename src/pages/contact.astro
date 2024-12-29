@@ -491,22 +491,27 @@ const publickey = import.meta.env.RECAPTCHA_PUBLIC_KEY;
 
 <script>
   declare const grecaptcha: any;
+  const publicKey = import.meta.env.PUBLIC_KEY;
+  console.log(publicKey);
 
-  grecaptcha.ready(function () {
-    grecaptcha.execute("YOUR_SITE_KEY", { action: "homepage" }).then(function (
-      token: string
-    ) {
-      // Get the element and ensure it's an HTMLInputElement
-      const captchaResponse = document.getElementById(
-        "captchaResponse"
-      ) as HTMLInputElement | null;
+  if (!publicKey) {
+    console.error("RECAPTCHA_PUBLIC_KEY is not defined.");
+  } else {
+    grecaptcha.ready(function () {
+      grecaptcha.execute(publicKey, { action: "homepage" }).then(function (
+        token: string
+      ) {
+        // Find the captcha response element
+        const captchaResponse = document.getElementById(
+          "captchaResponse"
+        ) as HTMLInputElement | null;
 
-      // Check for null before trying to set the value
-      if (captchaResponse) {
-        captchaResponse.value = token;
-      } else {
-        console.error("Element with ID 'captchaResponse' not found.");
-      }
+        if (captchaResponse) {
+          captchaResponse.value = token;
+        } else {
+          console.error("Element with ID 'captchaResponse' not found.");
+        }
+      });
     });
-  });
+  }
 </script>
