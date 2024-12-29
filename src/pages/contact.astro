@@ -102,11 +102,10 @@ const publickey = import.meta.env.RECAPTCHA_PUBLIC_KEY;
           tabindex="-1"
           autocomplete="off"
         />
-        <div
-          class="g-recaptcha"
-          data-sitekey={publickey}
-          type="submit"></div>
-        <button class="cs-button-solid g-recaptcha" type="submit">Submit Message</button
+        <!-- <div class="g-recaptcha" data-sitekey={publickey}></div> -->
+        <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
+        <button class="cs-button-solid g-recaptcha" type="submit"
+          >Submit Message</button
         >
       </form>
 
@@ -144,8 +143,6 @@ const publickey = import.meta.env.RECAPTCHA_PUBLIC_KEY;
 </BaseLayout>
 
 <style lang="less">
-  
-
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
     :root {
@@ -493,7 +490,23 @@ const publickey = import.meta.env.RECAPTCHA_PUBLIC_KEY;
 </style>
 
 <script>
-  function onSubmit(token) {
-    (document.querySelector("#cs-form") as HTMLFormElement).submit();
-  }
+  declare const grecaptcha: any;
+
+  grecaptcha.ready(function () {
+    grecaptcha.execute("YOUR_SITE_KEY", { action: "homepage" }).then(function (
+      token: string
+    ) {
+      // Get the element and ensure it's an HTMLInputElement
+      const captchaResponse = document.getElementById(
+        "captchaResponse"
+      ) as HTMLInputElement | null;
+
+      // Check for null before trying to set the value
+      if (captchaResponse) {
+        captchaResponse.value = token;
+      } else {
+        console.error("Element with ID 'captchaResponse' not found.");
+      }
+    });
+  });
 </script>

@@ -1,0 +1,1 @@
+import"./hoisted.CKc_fTbq.js";grecaptcha.ready(function(){grecaptcha.execute("YOUR_SITE_KEY",{action:"homepage"}).then(function(t){const e=document.getElementById("captchaResponse");e?e.value=t:console.error("Element with ID 'captchaResponse' not found.")})});
