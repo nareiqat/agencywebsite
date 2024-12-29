@@ -9,6 +9,7 @@ import { Image } from "astro:assets";
 import { getOptimizedImage } from "@js/utils";
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage);
+const publickey = import.meta.env.RECAPTCHA_PUBLIC_KEY;
 ---
 
 <BaseLayout
@@ -21,14 +22,18 @@ const optimizedImage = await getOptimizedImage(landingImage);
   <!-- ============================================ -->
 
   <Landing title="Contact" image={optimizedImage} />
-
   <!-- ============================================ -->
   <!--                Contact Form                  -->
   <!-- ============================================ -->
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <form
+        id="cs-form"
+        method="POST"
+        action="https://formcarry.com/s/L7tGPTWIxul"
+        enctype="multipart/form-data"
+      >
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
@@ -87,11 +92,24 @@ const optimizedImage = await getOptimizedImage(landingImage);
             name="Message"
             id="message"
             placeholder="Write message..."
-            required
-            ></textarea>
+            required></textarea>
         </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
+        <input
+          type="checkbox"
+          name="contact_me_by_fax_only"
+          value="1"
+          style="display:none !important"
+          tabindex="-1"
+          autocomplete="off"
+        />
+        <div
+          class="g-recaptcha"
+          data-sitekey={publickey}
+          type="submit"></div>
+        <button class="cs-button-solid g-recaptcha" type="submit">Submit Message</button
+        >
       </form>
+
       <div class="cs-right-section">
         <!--Email-->
         <div class="text-section">
@@ -126,11 +144,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 </BaseLayout>
 
 <style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
-
-  /*-- -------------------------- -->
-<---          Contact           -->
-<--- -------------------------- -*/
+  
 
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
@@ -451,7 +465,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
           color: var(--primaryLight);
         }
 
-
         #cs-form {
           label,
           input,
@@ -478,3 +491,9 @@ const optimizedImage = await getOptimizedImage(landingImage);
     }
   }
 </style>
+
+<script>
+  function onSubmit(token) {
+    (document.querySelector("#cs-form") as HTMLFormElement).submit();
+  }
+</script>
