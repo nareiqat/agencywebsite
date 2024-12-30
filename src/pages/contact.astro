@@ -32,7 +32,8 @@ const publickey = import.meta.env.VITE_PUBLIC_KEY_V2;
         id="cs-form"
         method="POST"
         action="https://formcarry.com/s/L7tGPTWIxul"
-        enctype="form-data"
+        enctype="multipart/form-data"
+        accept-charset="UTF-8"
       >
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
@@ -94,12 +95,8 @@ const publickey = import.meta.env.VITE_PUBLIC_KEY_V2;
             placeholder="Write message..."
             required></textarea>
         </label>
-        <div
-          class="g-recaptcha"
-          style="color: red"
-          data-sitekey={publickey}
-        >
-        </div>
+        <input type="hidden" name="_gotcha" />
+        <div class="g-recaptcha" data-sitekey={publickey} id="recaptcha"></div>
         <button class="cs-button-solid" type="submit">Submit Message</button>
       </form>
 
@@ -482,3 +479,4 @@ const publickey = import.meta.env.VITE_PUBLIC_KEY_V2;
     }
   }
 </style>
+

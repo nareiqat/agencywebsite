@@ -5,7 +5,6 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/root.less";
 import "@styles/dark.less";
-const publickey = import.meta.env.PUBLIC_KEY_V2;
 
 const { description, title, preloadedImage } = Astro.props;
 ---
@@ -62,7 +61,30 @@ const { description, title, preloadedImage } = Astro.props;
     <link rel="manifest" href="/assets/favicons/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- scripts -->
+    <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"
+    ></script>
+    <script defer>
+      var _captchaTries = 0;
+      function recaptchaOnload() {
+        _captchaTries++;
+        if (_captchaTries > 9) return;
+        if ($(".g-recaptcha").length > 0) {
+          grecaptcha.render("recaptcha", {
+            sitekey: "6Le-_KkqAAAAAOHHGnL_Q6gwRuHQ71xsZuLK0WjU",
+            callback: function () {
+              console.log("recaptcha callback");
+            },
+          });
+          return;
+        }
+        window.setTimeout(recaptchaOnload, 1000);
+      }
+    </script>
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit"
+      async
+      defer></script>
 
     <!--For home page, use service keywords for the title, including location for SEO.
             Other pages should just include the page name.
