@@ -4,12 +4,10 @@ import BaseLayout from "src/layouts/BaseLayout.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-import Blogsection from "@components/Blogsection.astro";
 import Hero from "@components/Hero.astro";
 import Portfolio from "@components/Portfolio.astro";
 import Pricing from "@components/Pricing.astro";
 import Services from "@components/Services.astro";
-import Testimonials from "@components/Testimonials.astro";
 import WhyUs from "@components/Performance.astro";
 import { getOptimizedImage } from "@js/utils";
 const optimizedImage = await getOptimizedImage(landingImage);

@@ -13,6 +13,6 @@
       "@js/*": ["src/js/*"]
     },
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   }
 }
