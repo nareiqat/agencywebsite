@@ -2,11 +2,13 @@
 import { Image } from "astro:assets";
 import landing from "../assets/images/earth.jpg";
 import cat from "../assets/svgs/cat.svg";
+import OfferModal from "./OfferModal.astro";
 ---
 
 <!-- ============================================ --><!--                    Hero                      --><!-- ============================================ -->
 <section id="hero-1352">
   <div class="cs-container">
+    <OfferModal />
     <div class="cs-content">
       <span class="cs-topper">NCAT Digital Agency</span>
       <h1 class="cs-title">Small Business Web Design & Development</h1>
@@ -22,7 +24,7 @@ import cat from "../assets/svgs/cat.svg";
         decoding="async"
         src={cat}
         loading={"eager"}
-        alt="accountant"
+        alt="ncat digital cat, our mascot"
         width="468"
         height="658"
       />
@@ -36,7 +38,7 @@ import cat from "../assets/svgs/cat.svg";
     <Image
       decoding="async"
       src={landing}
-      alt="abstract background"
+      alt="landing image should earth from space"
       width="2250"
       height="1500"
       aria-hidden="true"

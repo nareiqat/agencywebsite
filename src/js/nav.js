@@ -24,7 +24,7 @@ document.addEventListener("astro:page-load", () => {
     const isExpanded = element.getAttribute("aria-expanded");
     element.setAttribute(
       "aria-expanded",
-      isExpanded === "false" ? "true" : "false"
+      isExpanded === "false" ? "true" : "false",
     );
   }
 

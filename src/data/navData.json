@@ -10,6 +10,20 @@
     "children": []
   },
   {
+    "key": "Services",
+    "url": "/services/",
+    "children": [
+      {
+        "key": "Responsive Web Design",
+        "url": "/services/responsive-web-design/"
+      },
+      {
+        "key": "SEO",
+        "url": "/services/seo/"
+      }
+    ]
+  },
+  {
     "key": "Portfolio",
     "url": "/#portfolio",
     "children": []
@@ -23,9 +37,10 @@
     "key": "Pricing",
     "url": "/#pricing",
     "children": []
+  },
+  {
+    "key": "Blog",
+    "url": "/blog/",
+    "children": []
   }
-  
-
 ]
-
-

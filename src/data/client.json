@@ -1,15 +1,12 @@
 {
-	"name": "Ncat Digital Agency",
-	"email": "info@ncatdigitalagency.com",
-	"phoneForTel": "555-779-4407",
-	"phoneFormatted": "(555) 779-4407",
-	"address": {
-		"lineOne": "",
-		"lineTwo": "",
-		"city": "West Springfield",
-		"state": "Ma",
-		"zip": "01089"
-	
-	},
-	"domain": "www.ncatdigitalagency.com"
+  "name": "NCAT Digital Agency",
+  "email": "info@ncatdigitalagency.com",
+  "address": {
+    "lineOne": "",
+    "lineTwo": "",
+    "city": "West Springfield",
+    "state": "Ma",
+    "zip": "01089"
+  },
+  "domain": "www.ncatdigitalagency.com"
 }

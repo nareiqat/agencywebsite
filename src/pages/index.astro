@@ -4,25 +4,30 @@ import BaseLayout from "src/layouts/BaseLayout.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import Blogsection from "@components/Blogsection.astro";
+import FAQhome from "@components/FAQhome.astro";
 import Hero from "@components/Hero.astro";
+import WhyUs from "@components/Performance.astro";
 import Portfolio from "@components/Portfolio.astro";
 import Pricing from "@components/Pricing.astro";
 import Services from "@components/Services.astro";
-import WhyUs from "@components/Performance.astro";
 import { getOptimizedImage } from "@js/utils";
 const optimizedImage = await getOptimizedImage(landingImage);
-
 ---
 
 <BaseLayout
-  title="Local Business Website Development Agency"
-  description="Meta description for the page"
+  title="Western Mass Website Experts"
+  description=`Looking for expert local business website development?
+                NCAT Digital creates hand-coded, responsive websites designed for speed,
+                SEO, and scalability`
   preloadedImage={optimizedImage}
 >
   <Hero />
   <Services />
   <WhyUs />
+  <FAQhome />
   <Portfolio />
   <Pricing />
+  <Blogsection />
   <CTA />
 </BaseLayout>

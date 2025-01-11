@@ -6,14 +6,17 @@ import { Image } from "astro:assets";
 import cat from "../assets/svgs/nqatlogo.svg";
 
 const currentYear = getCurrentYear();
+
+const servicesOffered = navData
+  .find((item) => item.key === "Services")
+  ?.children.map((service) => ({ key: service.key, url: service.url }));
 ---
 
 <!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
 <footer id="footer">
   <div class="container">
     <div class="left-section">
-      <a class="logo" href="/"
-        >
+      <a class="logo" href="/">
         <Image
           loading="lazy"
           decoding="async"
@@ -34,6 +37,18 @@ const currentYear = getCurrentYear();
             navData.map((entry) => (
               <li class="cs-li">
                 <a href={entry.url}>{entry.key}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <ul>
+          <li>
+            <h2>Services</h2>
+          </li>
+          {
+            servicesOffered?.map((service) => (
+              <li class="cs-li">
+                <a href={service.url}>{service.key}</a>
               </li>
             ))
           }
@@ -202,7 +217,6 @@ const currentYear = getCurrentYear();
 
           &:hover {
             text-decoration: underline;
-            
           }
         }
 

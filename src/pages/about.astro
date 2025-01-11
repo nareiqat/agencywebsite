@@ -1,21 +1,23 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
 import CTA from "@components/CTA.astro";
+import FAQ from "@components/FAQabout.astro";
 import Landing from "@components/Landing.astro";
-import FAQ from "@components/FAQ.astro";
 import { Image } from "astro:assets";
+import BaseLayout from "src/layouts/BaseLayout.astro";
 import coding from "../assets/images/coding.jpg";
 import design from "../assets/images/design.jpg";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import { getOptimizedImage } from "@js/utils";
 import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import { getOptimizedImage } from "@js/utils";
 const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
 <BaseLayout
-  title="About"
-  description="Meta description for the page"
+  title="Meet NCAT Digital"
+  description=`NCAT Digital is your go-to partner for local business website
+                  development. See how we combine technology and design to deliver
+                  impactful digital solutions.`
   preloadedImage={optimizedImage}
 >
   <!-- ============================================ -->
@@ -37,7 +39,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             aria-hidden="true"
             decoding="async"
             src={design}
-            alt="cabinets"
+            alt="NCAT Digital double screen desk setup"
             loading="lazy"
             width="400"
             height="563"
@@ -48,7 +50,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
             aria-hidden="true"
             decoding="async"
             src={coding}
-            alt="cabinets"
+            alt="Screen with branding information"
             loading="lazy"
             width="1400"
             height="2563"
@@ -80,7 +82,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
           </p>
           <span class="cs-name">Nabeel Areiqat</span>
           <span class="cs-job">CEO-Founder</span>
-          <img
+          <Image
             class="cs-quote-icon"
             loading="lazy"
             decoding="async"
@@ -90,7 +92,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
             height="77"
           />
         </div>
-        <a href="/projects" class="cs-button-solid">Our Projects</a>
       </div>
     </div>
   </section>
@@ -314,7 +315,6 @@ const optimizedImage = await getOptimizedImage(landingImage);
         .cs-topper {
           color: var(--primaryLight);
         }
-
 
         .cs-title,
         .cs-text,

@@ -6,18 +6,17 @@ import { Image } from "astro:assets";
 import logo from "../assets/svgs/nqatlogo.svg";
 ---
 
-<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
 <header id="cs-navigation">
   <div class="cs-container">
-    <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
       <Image
         src={logo}
-        alt="cat logo"
+        alt="ncat digital logo"
         width="210"
         height="29"
         aria-hidden="true"
         decoding="async"
+        loading="eager"
       />
     </a>
     <!--Navigation List-->
@@ -74,6 +73,27 @@ import logo from "../assets/svgs/nqatlogo.svg";
                   >
                     {entry.key}
                   </a>
+                )}
+                {entry.children?.length > 0 && (
+                  // If entry has children in navData.json, create a drop down menu
+                  <ul id={`submenu-${entry.key}`} class="cs-drop-ul">
+                    {entry.children.map((child) => (
+                      <li class="cs-drop-li">
+                        <a
+                          aria-label={child.key}
+                          href={child.url}
+                          class="cs-li-link cs-drop-link"
+                          aria-current={
+                            Astro.url.pathname === child.url
+                              ? "page"
+                              : undefined
+                          }
+                        >
+                          {child.key}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))

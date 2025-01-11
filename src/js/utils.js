@@ -5,7 +5,7 @@ export function formatDate(date) {
     day: "numeric",
     year: "numeric",
   });
-};
+}
 
 export function getCurrentYear() {
   return new Date().getFullYear();
@@ -18,7 +18,7 @@ export async function getOptimizedImage(image) {
     format: "webp",
   });
 
-  return optimizedImage
+  return optimizedImage;
 }
 
 // Learn more agout the getImage() function here
