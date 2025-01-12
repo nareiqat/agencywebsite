@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import landing from "../assets/images/earth.jpg";
-import cat from "../assets/svgs/cat.svg";
+import earth from "@assets/images/earth1234.jpg";
+import cat from "@assets/svgs/cat.svg";
 import OfferModal from "./OfferModal.astro";
 ---
 
@@ -37,11 +37,12 @@ import OfferModal from "./OfferModal.astro";
   <div class="cs-background">
     <Image
       decoding="async"
-      src={landing}
-      alt="landing image should earth from space"
+      src={earth}
+      alt="Earth from space"
       width="2250"
       height="1500"
       aria-hidden="true"
+      onerror={earth.src}
     />
   </div>
 </section>
@@ -434,7 +435,7 @@ import OfferModal from "./OfferModal.astro";
   @media only screen and (min-width: 0rem) {
     #hero-1352 {
       .cs-background {
-        background: url("../assets/images/earth.jpg");
+        background: url("../assets/images/earth1234.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -459,5 +460,4 @@ import OfferModal from "./OfferModal.astro";
       }
     }
   }
-
 </style>
