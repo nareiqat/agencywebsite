@@ -1,171 +1,53 @@
 ---
 import { Image } from "astro:assets";
+import {portfolio} from "../data/portfolio.js"
 
-import constructionwebsite from "../assets/images/constructionwebsite.png";
-import landscapewebsite from "../assets/images/landscapewebsite.png";
-import paintingwebsite from "../assets/images/paintingwebsite.png";
-import grinderwebsite from "../assets/images/grinderwebsite.png";
-import handymanwebsite from "../assets/images/themasterhandymanwebsite.png";
 ---
 
 <section id="portfolio">
   <div class="cs-container">
     <div class="cs-content">
       <div class="cs-flex">
-        <span class="cs-topper">Our Portfolio</span>
-        <h2 class="cs-title">Example Works</h2>
+        <span class="cs-topper">{portfolio.topper}</span>
+        <h2 class="cs-title">{portfolio.title}</h2>
       </div>
       <p class="cs-text">
-        Explore a diverse array of projects that showcase our ability to
-        transform ideas into impactful digital solutions. From sleek and modern
-        website designs to feature-rich platforms, every project reflects our
-        commitment to quality and innovation. With each portfolio piece, we
-        demonstrate a seamless blend of creativity, functionality, and
-        performance excellence tailored to meet unique client needs.
+        {portfolio.description}
       </p>
     </div>
     <ul class="cs-card-group">
-      <li class="cs-item">
+      {
+        portfolio.projects.map((project) => (
+        <li class="cs-item">
         <div class="cs-link">
           <div class="cs-picture">
-            <!--Mobile Image-->
+           
 
             <Image
               loading="lazy"
               decoding="async"
-              src={landscapewebsite}
-              alt="landscape website built by NCAT Digital"
+              src={project.projectImage} 
+              alt={project.alt}
               width="413"
               height="420"
             />
           </div>
-          <h3 class="cs-h3">Hero Landscape</h3>
+          <h3 class="cs-h3"></h3>
           <p class="cs-item-text">
-            An immersive website designed to showcase Hero Landscape's
-            transformative outdoor projects, combining vibrant visuals with
-            user-friendly features to inspire clients
+            {project.projectDescription}
           </p>
 
           <a
-            href="https://herolandscapeing.netlify.app/"
+            href={project.projectLink}
             class="cs-button-solid"
             target="_blank"
             >To website
           </a>
         </div>
       </li>
-      <li class="cs-item">
-        <div class="cs-link">
-          <div class="cs-picture">
-            <!--Mobile Image-->
-
-            <Image
-              loading="lazy"
-              decoding="async"
-              src={constructionwebsite}
-              alt="construction website built by NCAT Digital"
-              width="413"
-              height="420"
-            />
-          </div>
-          <h3 class="cs-h3">Kirck Construction</h3>
-          <p class="cs-item-text">
-            A modern, responsive website highlighting Kirck Construction's
-            expertise in renovations and builds, featuring detailed project
-            galleries and client testimonials.
-          </p>
-
-          <a
-            href="https://kirckconstruction.netlify.app/"
-            class="cs-button-solid"
-            target="_blank">To website</a
-          >
-        </div>
-      </li>
-      <li class="cs-item">
-        <div class="cs-link">
-          <div class="cs-picture">
-            <!--Mobile Image-->
-
-            <Image
-              loading="lazy"
-              decoding="async"
-              src={paintingwebsite}
-              alt="painting website built by NCAT Digital"
-              width="413"
-              height="420"
-            />
-          </div>
-          <h3 class="cs-h3">ABC painters</h3>
-          <p class="cs-item-text">
-            A vibrant online portfolio for ABC Painters, showcasing bold color
-            schemes, completed projects, and a seamless contact form for
-            inquiries.
-          </p>
-
-          <a
-            href="https://yourdreampainterwebsite.netlify.app/"
-            class="cs-button-solid"
-            target="_blank">To website</a
-          >
-        </div>
-      </li>
-      <li class="cs-item">
-        <div class="cs-link">
-          <div class="cs-picture">
-            <!--Mobile Image-->
-
-            <Image
-              loading="lazy"
-              decoding="async"
-              src={handymanwebsite}
-              alt="handyman website built by NCAT Digital"
-              width="413"
-              height="420"
-            />
-          </div>
-          <h3 class="cs-h3">The Master Handyman</h3>
-          <p class="cs-item-text">
-            An efficient and professional website for The Master Handyman,
-            providing easy navigation through services, booking options, and
-            project showcases.
-          </p>
-
-          <a
-            href="https://www.handymanmastery.com/"
-            target="_blank"
-            class="cs-button-solid">To website</a
-          >
-        </div>
-      </li>
-      <li class="cs-item">
-        <div class="cs-link">
-          <div class="cs-picture">
-            <!--Mobile Image-->
-
-            <Image
-              loading="lazy"
-              decoding="async"
-              src={grinderwebsite}
-              alt="restaurant website built by NCAT Digital"
-              width="413"
-              height="420"
-            />
-          </div>
-          <h3 class="cs-h3">Liberty's Mediteranean Grinders</h3>
-          <p class="cs-item-text">
-            A sleek and elegant website for Liberty's, featuring stunning food
-            photography, a menu display, and streamlined online reservation
-            functionality.
-          </p>
-
-          <a
-            href="https://libertysmediterraneangrinders.com/"
-            target="_blank"
-            class="cs-button-solid">To website</a
-          >
-        </div>
-      </li>
+      ))}
+      
+ 
     </ul>
   </div>
 </section>

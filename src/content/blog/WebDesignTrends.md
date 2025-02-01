@@ -7,7 +7,6 @@ image: /src/assets/images/design.jpg
 imageAlt: Modern Web Design Example
 tags:
   - post
-  - featured
 ---
 
 ## The Latest in Web Design for Small Businesses

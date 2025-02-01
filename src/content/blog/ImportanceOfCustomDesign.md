@@ -5,7 +5,6 @@ author: NCAT Digital Agency
 date: 2025-01-09T12:00:00.000Z
 tags:
   - post
-  - featured
 image: /src/assets/images/webdesign.jpg
 imageAlt: Website Coding Process
 ---

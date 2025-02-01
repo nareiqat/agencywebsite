@@ -7,7 +7,6 @@ image: /src/assets/images/seo.jpg
 imageAlt: SEO Analysis
 tags:
   - post
-  - featured
 ---
 
 ## Mastering Local SEO for Western Massachusetts Businesses
