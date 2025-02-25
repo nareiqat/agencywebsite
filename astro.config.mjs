@@ -2,10 +2,11 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 export default defineConfig({
-  site: "https://www.yourwebsite.com", // update me!
+  site: "https://www.ncatdigitalagency.com", // update me!
   integrations: [
     icon(),
     sitemap({
