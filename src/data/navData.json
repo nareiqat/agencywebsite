@@ -6,20 +6,20 @@
   },
   {
     "key": "About Us",
-    "url": "/about/",
+    "url": "/about",
     "children": []
   },
   {
     "key": "Services",
-    "url": "/services/",
+    "url": "/services",
     "children": [
       {
         "key": "Responsive Web Design",
-        "url": "/services/responsive-web-design/"
+        "url": "/services/responsive-web-design"
       },
       {
         "key": "SEO",
-        "url": "/services/seo/"
+        "url": "/services/seo"
       }
     ]
   },
@@ -30,7 +30,7 @@
   },
   {
     "key": "Contact",
-    "url": "/contact/",
+    "url": "/contact",
     "children": []
   },
   {
@@ -40,7 +40,7 @@
   },
   {
     "key": "Blog",
-    "url": "/blog/",
+    "url": "/blog",
     "children": []
   }
 ]
