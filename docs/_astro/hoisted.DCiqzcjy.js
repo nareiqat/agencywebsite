@@ -1,1 +1,0 @@
-import"./hoisted.CKc_fTbq.js";document.addEventListener("astro:page-load",()=>{const e=Array.from(document.querySelectorAll(".cs-faq-item"));for(const t of e){const o=()=>{t.classList.toggle("active")};t.addEventListener("click",o)}});
