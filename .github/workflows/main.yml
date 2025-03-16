@@ -14,23 +14,15 @@ jobs:
     steps:
       - name: 🗂️ Checkout repository
         uses: actions/checkout@v3
-
-      - name: 🔨 Install and setup npm ${{ env.npm-version }}
-        uses: npm/action-setup@v2 
-        with:
-          version: ${{ env.npm-version }}
       - name: 🔧 Install and setup Node.js ${{ env.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node-version }}
           cache: 'npm'
-
       - name: 🛠️ Install dependencies
         run: npm install
-
       - name: 🛠️ Build application 
         run: npm run build
-
       - name: 📂 Sync files with FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
