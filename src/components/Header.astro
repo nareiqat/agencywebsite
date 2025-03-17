@@ -307,6 +307,7 @@ import logo from "../assets/images/Logo.png";
           height: 4rem;
           /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
           object-fit: contain;
+          filter: brightness(0.2);
         }
       }
 
@@ -907,12 +908,15 @@ import logo from "../assets/images/Logo.png";
         justify-content: flex-start;
         align-items: center;
         z-index: 100;
+        
 
         img {
           width: auto;
           height: 4rem;
           /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
           object-fit: contain;
+          filter: brightness(0.2);
+          
         }
       }
 
@@ -1107,6 +1111,12 @@ import logo from "../assets/images/Logo.png";
           filter: grayscale(1) brightness(10005);
         }
 
+        .cs-logo {
+          img {
+            filter: brightness(1);
+          }
+        }
+
         .cs-drop-ul {
           background-color: var(--primary);
         }
@@ -1118,6 +1128,20 @@ import logo from "../assets/images/Logo.png";
             color: var(--secondary);
           }
         }
+      }
+    }
+  }
+  @media only screen and (max-width: 64rem) {
+    body.dark-mode {
+      #cs-navigation {
+        
+
+        .cs-logo {
+          img {
+            filter: brightness(1);
+          }
+        }
+
       }
     }
   }
