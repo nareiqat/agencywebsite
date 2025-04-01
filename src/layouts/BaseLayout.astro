@@ -7,7 +7,7 @@ import "@styles/root.less";
 import "@styles/dark.less";
 
 const { description, title, preloadedImage } = Astro.props;
-const canonicalLink = Astro.url.pathname.replace(/\/$/, ""); // Remove trailing slash from pathname
+const canonicalLink = Astro.url.pathname;
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
