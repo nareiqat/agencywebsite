@@ -55,5 +55,21 @@ export const pricing = {
         link: "/contact",
       },
     },
+    {
+      planName: "Additional Custom Solutions",
+      features: [
+        { text: "AI Chat bots", icon: check },
+        { text: "AI Automations", icon: check },
+        { text: "Calender Integration", icon: check },
+        { text: "Cart Checkout", icon: check },
+        { text: "Custom Integrations", icon: check },
+    ],
+      price: "Custom",
+      additional: "per solution",
+      cta: {
+        text: "Get Started",
+        link: "/contact",
+      },
+    },
   ],
 };

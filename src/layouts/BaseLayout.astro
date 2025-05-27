@@ -5,6 +5,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/root.less";
 import "@styles/dark.less";
+import ChatBot from "@components/ChatBot.astro";
 
 const { description, title, preloadedImage } = Astro.props;
 const canonicalLink = Astro.url.pathname;
@@ -131,6 +132,7 @@ const canonicalLink = Astro.url.pathname;
     <main id="main">
       <slot />
     </main>
+    <ChatBot />
     <Footer />
   </body>
 </html>

@@ -20,6 +20,10 @@
       {
         "key": "SEO",
         "url": "/services/seo/"
+      },
+      {
+        "key": "AI Chatbot",
+        "url": "/services/aichatbot/"
       }
     ]
   },

@@ -15,4 +15,5 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
+  output: "hybrid",
 });
