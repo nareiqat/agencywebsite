@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import dotenv from "dotenv";
+import netlify from "@astrojs/netlify";
 
 dotenv.config();
 
@@ -15,5 +16,6 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
-  output: "hybrid",
+  output: "server",
+  adapter: netlify(),
 });
