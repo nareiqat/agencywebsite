@@ -16,6 +16,6 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
-  output: "server",
+  output: "static",
   adapter: netlify(),
 });
