@@ -1,8 +1,9 @@
 import constructionwebsite from "../assets/images/constructionwebsite.png";
 import akarauto from "../assets/images/akarauto.png";
-import sagemind from "../assets/images/sagemind.png";
+// import sagemind from "../assets/images/sagemind.png";
 import grinderwebsite from "../assets/images/grinderwebsite.png";
-import handymanwebsite from "../assets/images/themasterhandymanwebsite.png";
+// import handymanwebsite from "../assets/images/themasterhandymanwebsite.png";
+import vivaroofing from "../assets/images/vivaroofing.png";
 
 export const portfolio = {
   title: "Our Portfolio",
@@ -11,12 +12,12 @@ export const portfolio = {
     "Explore a diverse array of projects that showcase our ability to transform ideas into impactful digital solutions. From sleek and modern website designs to feature-rich platforms, every project reflects our commitment to quality and innovation. With each portfolio piece, we demonstrate a seamless blend of creativity, functionality, and performance excellence tailored to meet unique client needs.",
   projects: [
     {
-      projectImage: sagemind,
-      alt: "SageMind psychiatry website built by NCAT Digital",
-      projectName: "SageMind Psychiatry",
+      projectImage: vivaroofing,
+      alt: "Viva roofing and home improvement website built by NCAT Digital",
+      projectName: "Viva Roofing and Home Improvement",
       projectDescription:
-        "A simple, modern website showcasing SageMind Psychiatry's services and expertise with a clean, professional design.",
-      projectLink: "https://sagemindpsychiatry.com/",
+        "A simple, modern website landing page for viva roofing and home improvement. Showcasing their services and contact info.",
+      projectLink: "https://vivaroofinghomeimprovement.com/",
     },
     {
       projectImage: akarauto,
